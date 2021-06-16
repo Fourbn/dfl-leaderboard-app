@@ -3,7 +3,7 @@ import React from "react";
 const Queens = ({ sheetsData }) => {
   return (
     <section>
-      <p>Hello!</p>
+      <p>Queens!</p>
     </section>
   );
 };

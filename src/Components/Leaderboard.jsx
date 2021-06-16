@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Leaderboard = ({ sheetsData }) => {
   const leaderboard = [...sheetsData.db["The Leaderboard"]];
@@ -10,30 +10,53 @@ const Leaderboard = ({ sheetsData }) => {
     return 0;
   });
 
-  const tableHeadings = Object.keys(leaderboard[0]).reverse();
-
-  const reverseOrderObjectValues = (object) => {
-    return Object.values(object).reverse();
-  };
+  const tableHeadings = ["rank", "racer", "points", "queens"];
 
   return (
-    <section>
+    <section className="leaderboard wrapper">
       <table>
-        <thead>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+          <col className="queenColumnA" />
+          <col className="queenColumnB" />
+        </colgroup>
+        <thead className="tableHeadings">
           <tr>
             {tableHeadings.map((heading, index) => (
-              <th key={index}>{heading}</th>
+              <th
+                key={index}
+                className={`heading ${heading}Heading`}
+                colSpan={heading === "queens" ? 2 : 1}
+              >
+                {heading}
+              </th>
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="tableBody">
           {sortedLeaderboard.map((user, index) => {
             return (
-              <tr key={index}>
-                {reverseOrderObjectValues(user).map((value, index) => (
-                  <td key={index}>{value}</td>
-                ))}
-              </tr>
+              <Fragment key={index}>
+                <tr>
+                  <td className="rankData" rowSpan="2">
+                    {user.Ranking}
+                  </td>
+                  <td className="racerData" rowSpan="2">
+                    {user.Racer}
+                  </td>
+                  <td className="pointsData" rowSpan="2">
+                    {user["Total Points"]}
+                  </td>
+                  <td className="firstRowQueens">{user["Queen Supreme"]}</td>
+                  <td className="firstRowQueens">{user["Queen 2"]}</td>
+                </tr>
+                <tr>
+                  <td className="secondRowQueens">{user["Queen 3"]}</td>
+                  <td className="secondRowQueens">{user["Queen 4"]}</td>
+                </tr>
+              </Fragment>
             );
           })}
         </tbody>

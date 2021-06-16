@@ -1,0 +1,61 @@
+.leaderboard {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%
+  }
+
+  // individual cell styles //
+  th,
+  td {
+    padding: 2rem;
+    text-align: center;
+  }
+  th {
+    background-color: tint($grey, 20%);
+    border-right: 2px solid $grey;
+  }
+  .queensHeading {
+    border-right: none;
+  }
+  tr:nth-of-type(4n),
+  tr:nth-of-type(4n-1) {
+    background-color: tint($grey, 70%);
+  }
+  .firstRowQueens,
+  .secondRowQueens {
+    text-align: left;
+  }
+  .firstRowQueens {
+    padding: 1.5rem 2rem 5px;
+    border-bottom: 1px solid tint($grey, 50%);
+  }
+  .secondRowQueens {
+    padding: 5px 2rem 1.5rem;
+  }
+  .heading {
+    text-transform: capitalize;
+    padding: 1rem 2rem;
+  }
+  // ======================== //
+
+  // column width values //
+  .rankHeading {
+    width: 10%;
+  }
+  .racerHeading {
+    width: 20%;
+  }
+  .pointsHeading {
+    width: 10%;
+  }
+  .queenColumnA,
+  .queenColumnB {
+    width: 15%;
+  }
+  // ================== //
+}

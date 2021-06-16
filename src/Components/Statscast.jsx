@@ -3,7 +3,7 @@ import React from "react";
 const Statscast = ({ sheetsData }) => {
   return (
     <section>
-      <p>Hello!</p>
+      <p>Statscast!</p>
     </section>
   );
 };
