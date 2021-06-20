@@ -1,0 +1,65 @@
+.queenProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin-bottom: 1.5rem;
+    color: shade($pink, 15%);
+  }
+
+  .statsTables {
+    width: 45%;
+    h3 {
+      font-size: 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+      color: shade($grey, 50%);
+      margin-bottom: 5px;
+    }
+  }
+
+  table {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 1px solid tint($pink, 50%);
+    &:first-of-type {
+      padding-top: 1rem;
+      background-color: tint($pink, 90%);
+    }
+    &:nth-of-type(2) {
+      background-color: tint($pink, 95%);
+    }
+    &:last-of-type {
+      background-color: tint($pink, 90%);
+      border-bottom: none;
+    }
+  }
+
+  th {
+    font-size: 1.5rem;
+    color: shade($grey, 40%);
+  }
+
+  td {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .errorMessage {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    span {
+      display: block;
+    }
+  }
+  .queenLinks {
+    font-size: 1.5rem;
+    text-align: center;
+    li {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+

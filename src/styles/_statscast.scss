@@ -1,0 +1,17 @@
+.statscast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+  p {
+    width: 100%;
+    text-align: center;
+  }
+  ul li {
+    text-align: center;
+  }
+}

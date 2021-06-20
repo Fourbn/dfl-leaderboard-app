@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 const Leaderboard = ({ sheetsData }) => {
-  const leaderboard = [...sheetsData.db["The Leaderboard"]];
+  const leaderboard = [...sheetsData];
 
   const sortedLeaderboard = leaderboard.sort((a, b) => {
     if (parseInt(b["Total Points"]) > parseInt(a["Total Points"])) {
@@ -14,6 +14,7 @@ const Leaderboard = ({ sheetsData }) => {
 
   return (
     <section className="leaderboard wrapper">
+      <h2>The Leaderboard</h2>
       <table>
         <colgroup>
           <col />
