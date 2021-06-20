@@ -4,6 +4,9 @@
   justify-content: center;
   margin: $header-height auto $footer-height;
   padding: 2.5rem 0;
+  @include respond-to('mobile') {
+    margin: $header-height auto $footer-mobile-height;
+  }
 
   h2 {
     width: 100%;

@@ -5,6 +5,9 @@
   flex-wrap: wrap;
   margin: $header-height auto $footer-height;
   padding: 2.5rem 0;
+  @include respond-to('mobile') {
+    margin: $header-height auto $footer-mobile-height;
+  }
 
   h2 {
     width: 100%;
@@ -23,6 +26,9 @@
   td {
     padding: 2rem;
     text-align: center;
+    @include respond-to('tablet') {
+      padding: 5px;
+    }
   }
   td a {
     color: shade($grey, 60%);
@@ -39,10 +45,14 @@
   .queensHeading {
     border-right: none;
   }
-  tr:nth-of-type(4n-2),
-  tr:nth-of-type(4n-3) {
+
+  .rowGroupA {
     background-color: tint($pink, 90%);
   }
+  .rowGroupB {
+    background-color: white;
+  }
+
   .firstRowQueens,
   .secondRowQueens {
     text-align: left;
@@ -57,6 +67,9 @@
   .heading {
     text-transform: capitalize;
     padding: 1rem 2rem;
+    @include respond-to('tablet') {
+      padding: 1rem 5px;
+    }
   }
   // ======================== //
 
@@ -75,4 +88,44 @@
     width: 15%;
   }
   // ================== //
+  // Media //
+  .mobileTable {
+    display: none;
+    @include respond-to('mobile') {
+      display: table;
+    }
+    .mobileHeading {
+      text-transform: capitalize;
+    }
+    .rankMobileHeading {
+      width: 45px;
+    }
+    .pointsMobileHeading {
+      width: 60px;
+    }
+    .racerMobileHeading,
+    .queensMobileHeading {
+      width: 35%
+    }
+
+    .queensMobileHeading {
+      border-right: none;
+    }
+
+    .queensRow {
+      padding: 7px 0;
+      &.queensRowTop {
+        padding-top: 1.5rem;
+      }
+      &.queensRowBottom {
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+  .desktopTable {
+    display: table;
+    @include respond-to('mobile') {
+      display: none;
+    }
+  }
 }

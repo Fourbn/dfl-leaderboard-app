@@ -8,6 +8,9 @@ footer {
   right: 0;
   bottom: 0;
   background-color: white;
+  @include respond-to('mobile') {
+    height: $footer-mobile-height;
+  }
   nav ul {
     display: flex;
     justify-content: space-evenly;
@@ -41,6 +44,9 @@ footer {
       background-color: $pink;
       position: relative;
       bottom: -4px;
+      @include respond-to('mobile') {
+        width: 80%;
+      }
     }
   }
   .icon {

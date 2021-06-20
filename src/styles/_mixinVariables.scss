@@ -3,8 +3,21 @@ $grey: #808080;
 $link-purple: #623cea;
 
 $footer-height: 10.7vh;
+$footer-mobile-height: 13.3vh;
 $header-height: 11.7vh;
 
+@mixin respond-to($breakpoint) {
+  @if $breakpoint== 'mobile' {
+    @media (max-width: 550px) {
+      @content;
+    }
+  }
+  @if $breakpoint== 'tablet' {
+    @media (max-width: 750px) {
+      @content;
+    }
+  }
+}
 
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
