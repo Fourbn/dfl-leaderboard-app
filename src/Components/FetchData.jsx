@@ -19,7 +19,8 @@ const FetchData = (props) => {
     <Router>
       <Header />
       <Route
-        path="/leaderboard"
+        exact
+        path="/"
         render={() => <Leaderboard sheetsData={db["The Leaderboard"]} />}
       />
       <Route

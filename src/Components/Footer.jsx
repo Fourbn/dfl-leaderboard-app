@@ -15,7 +15,7 @@ const Footer = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/leaderboard" activeClassName="active">
+            <NavLink to="/" activeClassName="active">
               <ImTrophy className="icon" />
               The Leaderboard
             </NavLink>
