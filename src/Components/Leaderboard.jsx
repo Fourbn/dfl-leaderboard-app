@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+import { Link } from 'react-router-dom';
+import sluggify from "../helpers/sluggify";
 
 const Leaderboard = ({ sheetsData }) => {
   const leaderboard = [...sheetsData];
@@ -50,12 +52,28 @@ const Leaderboard = ({ sheetsData }) => {
                   <td className="pointsData" rowSpan="2">
                     {user["Total Points"]}
                   </td>
-                  <td className="firstRowQueens">{user["Queen Supreme"]}</td>
-                  <td className="firstRowQueens">{user["Queen 2"]}</td>
+                  <td className="firstRowQueens">
+                    <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                      {user["Queen Supreme"]}
+                    </Link>
+                  </td>
+                  <td className="firstRowQueens">
+                    <Link to={`/statscast/${sluggify(user["Queen 2"])}`}>
+                      {user["Queen 2"]}
+                    </Link>
+                  </td>
                 </tr>
                 <tr>
-                  <td className="secondRowQueens">{user["Queen 3"]}</td>
-                  <td className="secondRowQueens">{user["Queen 4"]}</td>
+                  <td className="secondRowQueens">
+                    <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                      {user["Queen 3"]}
+                    </Link>
+                  </td>
+                  <td className="secondRowQueens">
+                    <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                      {user["Queen 4"]}
+                    </Link>
+                  </td>
                 </tr>
               </Fragment>
             );

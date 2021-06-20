@@ -22,13 +22,13 @@ const Statscast = ({ sheetsData }) => {
     <section className="statscast wrapper">
       <h2>Statscast</h2>
       <p>
-        Curious about how the queens are doing? Click the link to see an
-        individual Queen's stats.
+        Curious about how the queens are doing?
+        <span>Click the link to see an individual Queen's stats.</span>
       </p>
-      <ul>
+      <ul className="queensIndex">
         {sortedQueens.map((queen) => (
           <li>
-            <Link to={`/queens/${sluggify(queen.Queen)}`} >{queen.Queen}</Link>
+            <Link to={`/statscast/${sluggify(queen.Queen)}`}>{queen.Queen}</Link>
           </li>
         ))}
       </ul>

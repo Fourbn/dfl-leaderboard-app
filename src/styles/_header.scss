@@ -1,11 +1,16 @@
 header {
-  min-height: 10vh;
+  height: $header-height;
   padding: 1rem 2rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid tint($pink, 60%);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: white;
 }
 
 .homeButton {
   display: inline-block;
-  width: 50px;
+  width: 43px;
 }

@@ -23,16 +23,16 @@ const FetchData = (props) => {
         render={() => <Leaderboard sheetsData={db["The Leaderboard"]} />}
       />
       <Route
-        exact
         path="/queens"
         render={() => <Queens sheetsData={db["Queen Standings"]} />}
       />
       <Route
+        exact
         path="/statscast"
         render={() => <Statscast sheetsData={db["Statscast"]} />}
       />
       <Route
-        path="/queens/:queen"
+        path="/statscast/:queen"
         render={(props) => <QueenProfile {...props} sheetsData={db["Statscast"]} />}
       />
       <Footer />

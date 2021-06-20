@@ -7,8 +7,34 @@ h1, h2, h3, p, label, input, textarea, ul, li {
   padding: 0;
 }
 
+h1, h2, h3, th {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+p, td {
+  font-family: 'Open Sans', sans-serif;
+}
+
 h2 {
   font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: shade($pink, 7%);
+}
+
+th,
+td {
+  text-align: center;
+  padding: 1rem;
+}
+
+th {
+  font-size: 1.5rem;
+  color: shade($grey, 60%);
+}
+td {
+  font-size: 1.3rem;
 }
 
 img {
@@ -25,4 +51,16 @@ li {
   max-width: 1400px;
   width: 90%;
   margin: 0 auto;
+}
+
+a {
+  color: shade($grey, 40%);
+  text-decoration: solid underline shade($grey, 40%);
+  transition: color 0.3s, text-decoration 0.3s;
+  font-weight: 500;
+  &:hover {
+    color: shade($pink, 10%);
+    text-decoration: solid underline shade($pink, 10%);
+    transition: color 0.3s, text-decoration 0.3s;
+  }
 }

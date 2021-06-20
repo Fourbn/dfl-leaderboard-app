@@ -1,13 +1,51 @@
 footer {
-  min-height: 10vh;
+  height: $footer-height;
   padding: 1rem 0;
   border-top: 2px solid tint($pink, 60%);
   margin-top: 2rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
   nav ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   nav li {
-    font-size: 2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    color: shade($grey, 10%);
+    margin: 0 2rem;
+    text-align: center;
+    width: 125px;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+    text-decoration: solid underline transparent;
+    &:hover {
+      color: $pink;
+      text-decoration: solid underline transparent;
+    }
+  }
+  .active {
+    color: $pink;
+    &::after {
+      content: '';
+      width: 45%;
+      height: 5px;
+      background-color: $pink;
+      position: relative;
+      bottom: -4px;
+    }
+  }
+  .icon {
+    margin-bottom: 5px;
+    font-size: 2.3rem;
+    color: inherit;
   }
 }

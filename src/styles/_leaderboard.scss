@@ -3,6 +3,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: $header-height auto $footer-height;
+  padding: 2.5rem 0;
 
   h2 {
     width: 100%;
@@ -22,16 +24,24 @@
     padding: 2rem;
     text-align: center;
   }
+  td a {
+    color: shade($grey, 60%);
+    text-decoration: solid underline transparent;
+    &:hover {
+      color: shade($pink, 10%);
+      text-decoration: solid underline shade($pink, 10%);
+    }
+  }
   th {
-    background-color: tint($grey, 20%);
-    border-right: 2px solid $grey;
+    background-color: tint($pink, 30%);
+    border-right: 2px solid tint($pink, 50%);
   }
   .queensHeading {
     border-right: none;
   }
-  tr:nth-of-type(4n),
-  tr:nth-of-type(4n-1) {
-    background-color: tint($grey, 70%);
+  tr:nth-of-type(4n-2),
+  tr:nth-of-type(4n-3) {
+    background-color: tint($pink, 90%);
   }
   .firstRowQueens,
   .secondRowQueens {

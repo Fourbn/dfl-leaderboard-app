@@ -2,9 +2,31 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: $header-height auto $footer-height;
+  padding: 2.5rem 0;
 
   h2 {
     width: 100%;
     text-align: center;
+  }
+
+  thead {
+    background-color: tint($pink, 30%);
+    th {
+      outline: 1.5px solid tint($pink, 30%);
+      width: 150px;
+      &:first-of-type {
+        border-right: 2px solid tint($pink, 50%);
+      }
+    }
+  }
+  tbody {
+    tr:nth-of-type(2n-1) {
+      background-color: tint($pink, 90%);
+
+      td {
+        outline: 1.5px solid tint($pink, 90%);
+      }
+    }
   }
 }

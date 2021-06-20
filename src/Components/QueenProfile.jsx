@@ -85,7 +85,7 @@ const QueenProfile = ({ sheetsData, match }) => {
           <ul className="queenLinks">
             {sheetsData.map((queen) => (
               <li>
-                <Link to={`/queens/${sluggify(queen.Queen)}`} >{queen.Queen}</Link>
+                <Link to={`/statscast/${sluggify(queen.Queen)}`} >{queen.Queen}</Link>
               </li>
             ))}
           </ul>

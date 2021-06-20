@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import sluggify from "../helpers/sluggify";
 
 const Queens = ({ sheetsData }) => {
   const queens = [...sheetsData];
@@ -30,7 +32,9 @@ const Queens = ({ sheetsData }) => {
         <tbody>
           {sortedQueens.map((queen, index) => (
             <tr key={index}>
-              <td>{queen.Queen}</td>
+              <td>
+                <Link to={`/statscast/${sluggify(queen.Queen)}`}>{queen.Queen}</Link>
+              </td>
               <td>{queen["Total Points"]}</td>
             </tr>
           ))}
