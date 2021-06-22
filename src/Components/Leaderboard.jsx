@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from 'react-router-dom';
 import sluggify from "../helpers/sluggify";
+import { FaCrown } from "react-icons/fa";
 
 const Leaderboard = ({ sheetsData }) => {
   const leaderboard = [...sheetsData];
@@ -53,8 +54,11 @@ const Leaderboard = ({ sheetsData }) => {
                     {user["Total Points"]}
                   </td>
                   <td className="firstRowQueens">
-                    <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
-                      {user["Queen Supreme"]}
+                    <Link
+                      className="queenSupremeLink"
+                      to={`/statscast/${sluggify(user["Queen Supreme"])}`}
+                    >
+                      {user["Queen Supreme"]}<FaCrown className="icon" />
                     </Link>
                   </td>
                   <td className="firstRowQueens">
@@ -89,7 +93,10 @@ const Leaderboard = ({ sheetsData }) => {
         <thead className="tableHeadings">
           <tr>
             {tableHeadings.map((heading, index) => (
-              <th key={index} className={`mobileHeading ${heading}MobileHeading`}>
+              <th
+                key={index}
+                className={`mobileHeading ${heading}MobileHeading`}
+              >
                 {heading}
               </th>
             ))}
@@ -98,7 +105,7 @@ const Leaderboard = ({ sheetsData }) => {
         <tbody className="tableBody">
           {sortedLeaderboard.map((user, index) => (
             <Fragment key={index}>
-              <tr className={index % 2 === 0 ? 'rowGroupA' : 'rowGroupB'}>
+              <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                 <td className="rankData" rowSpan="4">
                   {user.Ranking}
                 </td>
@@ -109,26 +116,26 @@ const Leaderboard = ({ sheetsData }) => {
                   {user["Total Points"]}
                 </td>
                 <td className="queensRow queensRowTop">
-                  <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
-                    {user["Queen Supreme"]}
+                  <Link className="queenSupremeLink" to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                    {user["Queen Supreme"]} <FaCrown className="icon" />
                   </Link>
                 </td>
               </tr>
-              <tr className={index % 2 === 0 ? 'rowGroupA' : 'rowGroupB'}>
+              <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                 <td className="queensRow">
                   <Link to={`/statscast/${sluggify(user["Queen 2"])}`}>
                     {user["Queen 2"]}
                   </Link>
                 </td>
               </tr>
-              <tr className={index % 2 === 0 ? 'rowGroupA' : 'rowGroupB'}>
+              <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                 <td className="queensRow">
                   <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
                     {user["Queen 3"]}
                   </Link>
                 </td>
               </tr>
-              <tr className={index % 2 === 0 ? 'rowGroupA' : 'rowGroupB'}>
+              <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                 <td className="queensRow queensRowBottom">
                   <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
                     {user["Queen 4"]}

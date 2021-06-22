@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { withGoogleSheets } from "react-db-google-sheets";
 
 
@@ -16,7 +16,7 @@ import QueenProfile from "./QueenProfile";
 const FetchData = (props) => {
   const { db } = props;
   return (
-    <Router>
+    <>
       <Header />
       <Route
         exact
@@ -37,7 +37,7 @@ const FetchData = (props) => {
         render={(props) => <QueenProfile {...props} sheetsData={db["Statscast"]} />}
       />
       <Footer />
-    </Router>
+    </>
   );
 };
 
