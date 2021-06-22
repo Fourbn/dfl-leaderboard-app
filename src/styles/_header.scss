@@ -3,6 +3,8 @@ header {
   padding: 1rem 2rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid tint($pink, 60%);
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   left: 0;
   right: 0;
@@ -13,4 +15,16 @@ header {
 .homeButton {
   display: inline-block;
   width: 43px;
+}
+
+.coderButton {
+  display: inline-block;
+  width: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.4s;
+  &:hover {
+    background-color: tint($pink, 80%);
+    transition: background-color 0.4s;
+  }
 }

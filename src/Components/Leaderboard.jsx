@@ -87,11 +87,13 @@ const Leaderboard = ({ sheetsData }) => {
           ))}
         </colgroup>
         <thead className="tableHeadings">
-          {tableHeadings.map((heading, index) => (
-            <th key={index} className={`mobileHeading ${heading}MobileHeading`}>
-              {heading}
-            </th>
-          ))}
+          <tr>
+            {tableHeadings.map((heading, index) => (
+              <th key={index} className={`mobileHeading ${heading}MobileHeading`}>
+                {heading}
+              </th>
+            ))}
+          </tr>
         </thead>
         <tbody className="tableBody">
           {sortedLeaderboard.map((user, index) => (

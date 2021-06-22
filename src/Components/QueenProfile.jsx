@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import sluggify from '../helpers/sluggify';
 
-const QueenProfile = ({ sheetsData, match }) => {
-  console.log(match);
+const queensPhotoDirectory = require.context(
+  "../assets/promo-photos",
+  false,
+  /.png$/
+);
 
+const QueenProfile = ({ sheetsData, match }) => {
   const [correctPath, setCorrectPath] = useState(false);
   const [matchingQueenData, setMatchingQueenData] = useState({});
+  const listOfPhotos = queensPhotoDirectory.keys();
 
   useEffect(() => {
     const foundMatch = sheetsData.find((queen) => sluggify(queen.Queen) === match.params.queen)
@@ -18,12 +23,23 @@ const QueenProfile = ({ sheetsData, match }) => {
     }
   }, [sheetsData, match.params])
 
-  console.log(matchingQueenData);
-
   return (
     <section className="queenProfile wrapper">
       {correctPath ? (
         <>
+          <div>
+            {listOfPhotos.includes(`./${match.params.queen}.png`) && (
+              <div className="photoWrapper">
+                <img
+                  src={
+                    queensPhotoDirectory(`./${match.params.queen}.png`)
+                      .default
+                  }
+                  alt=""
+                />
+              </div>
+            )}
+          </div>
           <h2>{matchingQueenData.Queen}</h2>
           <div className="statsTables">
             <h3>Stats</h3>
@@ -83,9 +99,11 @@ const QueenProfile = ({ sheetsData, match }) => {
             <span>What about one of these ladies?</span>
           </p>
           <ul className="queenLinks">
-            {sheetsData.map((queen) => (
-              <li>
-                <Link to={`/statscast/${sluggify(queen.Queen)}`} >{queen.Queen}</Link>
+            {sheetsData.map((queen, index) => (
+              <li key={`${sluggify(queen.Queen) + index}`}>
+                <Link to={`/statscast/${sluggify(queen.Queen)}`}>
+                  {queen.Queen}
+                </Link>
               </li>
             ))}
           </ul>
