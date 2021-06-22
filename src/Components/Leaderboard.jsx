@@ -58,7 +58,8 @@ const Leaderboard = ({ sheetsData }) => {
                       className="queenSupremeLink"
                       to={`/statscast/${sluggify(user["Queen Supreme"])}`}
                     >
-                      {user["Queen Supreme"]}<FaCrown className="icon" />
+                      <FaCrown className="icon" />{' '}
+                      {user["Queen Supreme"]}
                     </Link>
                   </td>
                   <td className="firstRowQueens">
@@ -117,7 +118,8 @@ const Leaderboard = ({ sheetsData }) => {
                 </td>
                 <td className="queensRow queensRowTop">
                   <Link className="queenSupremeLink" to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
-                    {user["Queen Supreme"]} <FaCrown className="icon" />
+                    <FaCrown className="icon" />{' '}
+                    {user["Queen Supreme"]}
                   </Link>
                 </td>
               </tr>
