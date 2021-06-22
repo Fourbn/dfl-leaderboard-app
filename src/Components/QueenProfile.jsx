@@ -27,17 +27,17 @@ const QueenProfile = ({ sheetsData, match }) => {
     <section className="queenProfile wrapper">
       {correctPath ? (
         <>
-          {/* {listOfPhotos.includes(`./${match.params.queen}.png`) && ( */}
+          {listOfPhotos.includes(`./${match.params.queen}.png`) && (
             <div className="photoWrapper">
               <img
                 src={
-                  queensPhotoDirectory(`./eureka.png`)
+                  queensPhotoDirectory(`./${match.params.queen}.png`)
                     .default
                 }
                 alt=""
               />
             </div>
-          {/* )} */}
+          )}
           <div className="statsTables">
             <h2>{matchingQueenData.Queen}</h2>
             <h3>Stats</h3>
