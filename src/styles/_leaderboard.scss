@@ -72,6 +72,22 @@
     }
   }
 
+  .rank {
+    position: relative;
+    .icon {
+      top: 2px;
+    }
+    .icon1 {
+      color: $gold;
+    }
+    .icon2 {
+      color: $silver;
+    }
+    .icon3 {
+      color: $bronze;
+    }
+  }
+
   .queenSupremeLink {
     position: relative;
   }

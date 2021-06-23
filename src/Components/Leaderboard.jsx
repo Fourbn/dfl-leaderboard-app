@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from 'react-router-dom';
 import sluggify from "../helpers/sluggify";
-import { FaCrown } from "react-icons/fa";
+import { FaCrown, FaMedal } from "react-icons/fa";
 
 const Leaderboard = ({ sheetsData }) => {
   const leaderboard = [...sheetsData];
@@ -45,7 +45,12 @@ const Leaderboard = ({ sheetsData }) => {
               <Fragment key={index}>
                 <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                   <td className="rankData" rowSpan="2">
-                    {user.Ranking}
+                    <span className="rank">
+                      {index + 1 <= 3 && (
+                        <FaMedal className={`icon icon${index + 1}`} />
+                      )}
+                      {user.Ranking}
+                    </span>
                   </td>
                   <td className="racerData" rowSpan="2">
                     {user.Racer}
