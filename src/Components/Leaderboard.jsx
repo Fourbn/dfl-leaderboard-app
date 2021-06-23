@@ -75,12 +75,12 @@ const Leaderboard = ({ sheetsData }) => {
                 </tr>
                 <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                   <td className="secondRowQueens">
-                    <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                    <Link to={`/statscast/${sluggify(user["Queen 3"])}`}>
                       {user["Queen 3"]}
                     </Link>
                   </td>
                   <td className="secondRowQueens">
-                    <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                    <Link to={`/statscast/${sluggify(user["Queen 4"])}`}>
                       {user["Queen 4"]}
                     </Link>
                   </td>
@@ -137,14 +137,14 @@ const Leaderboard = ({ sheetsData }) => {
               </tr>
               <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                 <td className="queensRow">
-                  <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                  <Link to={`/statscast/${sluggify(user["Queen 3"])}`}>
                     {user["Queen 3"]}
                   </Link>
                 </td>
               </tr>
               <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                 <td className="queensRow queensRowBottom">
-                  <Link to={`/statscast/${sluggify(user["Queen Supreme"])}`}>
+                  <Link to={`/statscast/${sluggify(user["Queen 4"])}`}>
                     {user["Queen 4"]}
                   </Link>
                 </td>
