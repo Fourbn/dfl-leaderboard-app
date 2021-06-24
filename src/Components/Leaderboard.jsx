@@ -128,7 +128,7 @@ const Leaderboard = ({ sheetsData }) => {
               <Fragment key={index}>
                 <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                   <td className="rankData" rowSpan="4">
-                    {user.Ranking}
+                    {addSuffix(index + 1)}
                   </td>
                   <td className="racerData" rowSpan="4">
                     {user.Racer}
