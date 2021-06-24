@@ -25,8 +25,8 @@ const Statscast = ({ sheetsData }) => {
     <section className="statscast wrapper">
       <h2>Statscast</h2>
       <p>
-        Curious about how the queens are doing?
-        <span>Click the link to see an individual Queen's stats.</span>
+        Curious how your queens are doing?
+        <span>Click the Queen to see their individual stats.</span>
       </p>
       <ul className="queensIndex">
         {sortedQueens.map((queen, index) => (
