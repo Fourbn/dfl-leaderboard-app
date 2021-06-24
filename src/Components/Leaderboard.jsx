@@ -1,50 +1,11 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import { Link } from 'react-router-dom';
 import sluggify from "../helpers/sluggify";
 import { FaCrown, FaMedal } from "react-icons/fa";
 
 const Leaderboard = ({ sheetsData }) => {
   const leaderboard = Array.from(sheetsData);
-  // console.log({ sheetsData });
-  // console.log({ leaderboard });
 
-  const sortArrayByPoints = (array) => {
-    console.log('sorting array');
-    return array.sort((a, b) => {
-      if (parseInt(b["Total Points"]) > parseInt(a["Total Points"])) {
-        // console.log(`${b.Racer} is greater than ${a.Racer}`)
-        return 1;
-      }
-      if (parseInt(b["Total Points"]) < parseInt(a["Total Points"])) {
-        // console.log(`${b.Racer} is less than ${a.Racer}`);
-        return -1;
-      }
-      // console.log(`${b.Racer} is equal to ${a.Racer}`);
-      return 0;
-    });
-  }
-  
-  // useEffect(() => {
-  //   console.log('useEffect ran');
-
-  //   const sortedLeaderboard = leaderboard.sort((a, b) => {
-  //     console.log('sorting the leaderboard')
-  //     if (parseInt(b["Total Points"]) > parseInt(a["Total Points"])) {
-  //       // console.log(`${b.Racer} is greater than ${a.Racer}`)
-  //       return 1;
-  //     }
-  //     if (parseInt(b["Total Points"]) < parseInt(a["Total Points"])) {
-  //       // console.log(`${b.Racer} is less than ${a.Racer}`);
-  //       return -1;
-  //     }
-  //     // console.log(`${b.Racer} is equal to ${a.Racer}`);
-  //     return 0;
-  //   });
-    
-  //   setSoartedBoard([...sortedLeaderboard])
-  // }, [leaderboard])
-  // console.log({ sortedBoard });
-  
   const tableHeadings = ["rank", "racer", "points", "queens"];
 
   const addSuffix = (number) => {
