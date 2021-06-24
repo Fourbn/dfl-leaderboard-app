@@ -15,6 +15,19 @@ const Leaderboard = ({ sheetsData }) => {
 
   const tableHeadings = ["rank", "racer", "points", "queens"];
 
+  const addSuffix = (number) => {
+    if (number.toString().endsWith("1") && number !== 11) {
+      return `${number}st`;
+    }
+    if (number.toString().endsWith("2") && number !== 12) {
+      return `${number}nd`;
+    }
+    if (number.toString().endsWith("3") && number !== 13) {
+      return `${number}rd`;
+    }
+    return `${number}th`;
+  }
+
   return (
     <section className="leaderboard wrapper">
       <h2>The Leaderboard</h2>
@@ -49,7 +62,7 @@ const Leaderboard = ({ sheetsData }) => {
                       {index + 1 <= 3 && (
                         <FaMedal className={`icon icon${index + 1}`} />
                       )}
-                      {user.Ranking}
+                      {addSuffix(index + 1)}
                     </span>
                   </td>
                   <td className="racerData" rowSpan="2">
