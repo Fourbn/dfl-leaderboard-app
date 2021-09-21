@@ -6,8 +6,8 @@ const Queens = ({ sheetsData }) => {
   const queens = [...sheetsData];
 
   const sortedQueens = queens.sort((a, b) => {
-    const numA = parseInt(a["Total Points"]);
-    const numB = parseInt(b["Total Points"]);
+    const numA = parseInt(a.totalPoints);
+    const numB = parseInt(b.totalPoints);
 
     if (numA < numB) {
       return 1;
@@ -33,9 +33,9 @@ const Queens = ({ sheetsData }) => {
           {sortedQueens.map((queen, index) => (
             <tr key={index}>
               <td>
-                <Link to={`/statscast/${sluggify(queen.Queen)}`}>{queen.Queen}</Link>
+                <Link to={`/statscast/${sluggify(queen.queen)}`}>{queen.queen}</Link>
               </td>
-              <td>{queen["Total Points"]}</td>
+              <td>{queen.totalPoints}</td>
             </tr>
           ))}
         </tbody>

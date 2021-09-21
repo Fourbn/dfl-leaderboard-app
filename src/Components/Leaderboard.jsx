@@ -49,7 +49,7 @@ const Leaderboard = ({ sheetsData }) => {
           {leaderboard
             .sort(
               (a, b) =>
-                parseInt(b["Total Points"]) - parseInt(a["Total Points"])
+                parseInt(b.totalPoints) - parseInt(a.totalPoints)
             )
             .map((user, index) => {
               return (
@@ -64,34 +64,34 @@ const Leaderboard = ({ sheetsData }) => {
                       </span>
                     </td>
                     <td className="racerData" rowSpan="2">
-                      {user.Racer}
+                      {user.racer}
                     </td>
                     <td className="pointsData" rowSpan="2">
-                      {user["Total Points"]}
+                      {user.totalPoints}
                     </td>
                     <td className="firstRowQueens">
                       <Link
                         className="queenSupremeLink"
-                        to={`/statscast/${sluggify(user["Queen Supreme"])}`}
+                        to={`/statscast/${sluggify(user.queenSupreme)}`}
                       >
-                        <FaCrown className="icon" /> {user["Queen Supreme"]}
+                        <FaCrown className="icon" /> {user.queenSupreme}
                       </Link>
                     </td>
                     <td className="firstRowQueens">
-                      <Link to={`/statscast/${sluggify(user["Queen 2"])}`}>
-                        {user["Queen 2"]}
+                      <Link to={`/statscast/${sluggify(user.queen2)}`}>
+                        {user.queen2}
                       </Link>
                     </td>
                   </tr>
                   <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                     <td className="secondRowQueens">
-                      <Link to={`/statscast/${sluggify(user["Queen 3"])}`}>
-                        {user["Queen 3"]}
+                      <Link to={`/statscast/${sluggify(user.queen3)}`}>
+                        {user.queen3}
                       </Link>
                     </td>
                     <td className="secondRowQueens">
-                      <Link to={`/statscast/${sluggify(user["Queen 4"])}`}>
-                        {user["Queen 4"]}
+                      <Link to={`/statscast/${sluggify(user.queen4)}`}>
+                        {user.queen4}
                       </Link>
                     </td>
                   </tr>
@@ -122,7 +122,7 @@ const Leaderboard = ({ sheetsData }) => {
           {leaderboard
             .sort(
               (a, b) =>
-                parseInt(b["Total Points"]) - parseInt(a["Total Points"])
+                parseInt(b.totalPoints) - parseInt(a.totalPoints)
             )
             .map((user, index) => (
               <Fragment key={index}>
@@ -131,38 +131,38 @@ const Leaderboard = ({ sheetsData }) => {
                     {addSuffix(index + 1)}
                   </td>
                   <td className="racerData" rowSpan="4">
-                    {user.Racer}
+                    {user.racer}
                   </td>
                   <td className="pointsData" rowSpan="4">
-                    {user["Total Points"]}
+                    {user.totalPoints}
                   </td>
                   <td className="queensRow queensRowTop">
                     <Link
                       className="queenSupremeLink"
-                      to={`/statscast/${sluggify(user["Queen Supreme"])}`}
+                      to={`/statscast/${sluggify(user.queenSupreme)}`}
                     >
-                      <FaCrown className="icon" /> {user["Queen Supreme"]}
+                      <FaCrown className="icon" /> {user.queenSupreme}
                     </Link>
                   </td>
                 </tr>
                 <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                   <td className="queensRow">
-                    <Link to={`/statscast/${sluggify(user["Queen 2"])}`}>
-                      {user["Queen 2"]}
+                    <Link to={`/statscast/${sluggify(user.queen2)}`}>
+                      {user.queen2}
                     </Link>
                   </td>
                 </tr>
                 <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                   <td className="queensRow">
-                    <Link to={`/statscast/${sluggify(user["Queen 3"])}`}>
-                      {user["Queen 3"]}
+                    <Link to={`/statscast/${sluggify(user.queen3)}`}>
+                      {user.queen3}
                     </Link>
                   </td>
                 </tr>
                 <tr className={index % 2 === 0 ? "rowGroupA" : "rowGroupB"}>
                   <td className="queensRow queensRowBottom">
-                    <Link to={`/statscast/${sluggify(user["Queen 4"])}`}>
-                      {user["Queen 4"]}
+                    <Link to={`/statscast/${sluggify(user.queen4)}`}>
+                      {user.queen4}
                     </Link>
                   </td>
                 </tr>

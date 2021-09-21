@@ -5,6 +5,7 @@ header {
   border-bottom: 2px solid tint($pink, 60%);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: fixed;
   z-index: 10;
   left: 0;
@@ -13,12 +14,19 @@ header {
   background-color: white;
 }
 
+h1 {
+  font-size: 3.6rem;
+  color: $pink;
+}
+
 .homeButton {
   display: inline-block;
   width: 43px;
+  flex-shrink: 0;
 }
 
 .coderButton {
+  flex-shrink: 0;
   display: inline-block;
   width: 50px;
   padding: 5px;

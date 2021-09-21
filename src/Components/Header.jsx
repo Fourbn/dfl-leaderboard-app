@@ -11,6 +11,7 @@ const Header = () => {
       >
         <img src={logo} alt="Logo for the Drag Race Fantasy League" />
       </a>
+      <h1>Drag Race UK - Season 3</h1>
       <a className="coderButton" href="https://codeturkie.io" title="App built by Philip Turkiewicz">
         <img src={PhilLogo} alt="Logo for Philip Turkiewicz's portfolio site" />
       </a>

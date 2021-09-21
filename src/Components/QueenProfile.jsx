@@ -5,7 +5,7 @@ import sluggify from '../helpers/sluggify';
 const queensPhotoDirectory = require.context(
   "../assets/promo-photos",
   false,
-  /.png$/
+  /.jpg$/
 );
 
 const QueenProfile = ({ sheetsData, match }) => {
@@ -14,7 +14,7 @@ const QueenProfile = ({ sheetsData, match }) => {
   const listOfPhotos = queensPhotoDirectory.keys();
 
   useEffect(() => {
-    const foundMatch = sheetsData.find((queen) => sluggify(queen.Queen) === match.params.queen)
+    const foundMatch = sheetsData.find((queenObject) => sluggify(queenObject.queen) === match.params.queen)
     // reset the correctPath state in case a user uses the browser back button to go to an invalid queen page
     setCorrectPath(false);
     if (foundMatch) {
@@ -27,11 +27,11 @@ const QueenProfile = ({ sheetsData, match }) => {
     <section className="queenProfile wrapper">
       {correctPath ? (
         <>
-          {listOfPhotos.includes(`./${match.params.queen}.png`) && (
+          {listOfPhotos.includes(`./${match.params.queen}.jpg`) && (
             <div className="photoWrapper">
               <img
                 src={
-                  queensPhotoDirectory(`./${match.params.queen}.png`)
+                  queensPhotoDirectory(`./${match.params.queen}.jpg`)
                     .default
                 }
                 alt=""
@@ -39,7 +39,7 @@ const QueenProfile = ({ sheetsData, match }) => {
             </div>
           )}
           <div className="statsTables">
-            <h2>{matchingQueenData.Queen}</h2>
+            <h2>{matchingQueenData.queen}</h2>
             <h3>Stats</h3>
             <table>
               <thead>
@@ -51,9 +51,9 @@ const QueenProfile = ({ sheetsData, match }) => {
               </thead>
               <tbody>
                 <tr>
-                  <td>{matchingQueenData["SAFE"]}</td>
-                  <td>{matchingQueenData["LSFYL"]}</td>
-                  <td>{matchingQueenData["MINI"]}</td>
+                  <td>{matchingQueenData.safe}</td>
+                  <td>{matchingQueenData.lsfyl}</td>
+                  <td>{matchingQueenData.mini}</td>
                 </tr>
               </tbody>
             </table>
@@ -61,15 +61,15 @@ const QueenProfile = ({ sheetsData, match }) => {
               <thead>
                 <tr>
                   <th>TOP</th>
-                  <th>ASSASSIN</th>
+                  <th>MAXI</th>
                   <th>BTM</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>{matchingQueenData["TOP"]}</td>
-                  <td>{matchingQueenData["ASSASSIN"]}</td>
-                  <td>{matchingQueenData["BTM"]}</td>
+                  <td>{matchingQueenData.top}</td>
+                  <td>{matchingQueenData.maxi}</td>
+                  <td>{matchingQueenData.btm}</td>
                 </tr>
               </tbody>
             </table>
@@ -82,8 +82,8 @@ const QueenProfile = ({ sheetsData, match }) => {
               </thead>
               <tbody>
                 <tr>
-                  <td>{matchingQueenData["ELIM"]}</td>
-                  <td>{matchingQueenData["WINNER"]}</td>
+                  <td>{matchingQueenData.elim}</td>
+                  <td>{matchingQueenData.winner}</td>
                 </tr>
               </tbody>
             </table>
@@ -97,10 +97,10 @@ const QueenProfile = ({ sheetsData, match }) => {
             <span>What about one of these ladies?</span>
           </p>
           <ul className="queenLinks">
-            {sheetsData.map((queen, index) => (
-              <li key={`${sluggify(queen.Queen) + index}`}>
-                <Link to={`/statscast/${sluggify(queen.Queen)}`}>
-                  {queen.Queen}
+            {sheetsData.map((queenObject, index) => (
+              <li key={`${sluggify(queenObject.queen) + index}`}>
+                <Link to={`/statscast/${sluggify(queenObject.queen)}`}>
+                  {queenObject.queen}
                 </Link>
               </li>
             ))}

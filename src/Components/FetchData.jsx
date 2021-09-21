@@ -15,26 +15,29 @@ import QueenProfile from "./QueenProfile";
 
 const FetchData = (props) => {
   const { db } = props;
+  console.log(db);
+
+
   return (
     <>
       <Header />
       <Route
         exact
         path="/"
-        render={() => <Leaderboard sheetsData={db["The Leaderboard"]} />}
+        render={() => <Leaderboard sheetsData={db.ukLeaderboard} />}
       />
       <Route
         path="/queens"
-        render={() => <Queens sheetsData={db["Queen Standings"]} />}
+        render={() => <Queens sheetsData={db.ukQueenStandings} />}
       />
       <Route
         exact
         path="/statscast"
-        render={() => <Statscast sheetsData={db["Statscast"]} />}
+        render={() => <Statscast sheetsData={db.ukStatscast} />}
       />
       <Route
         path="/statscast/:queen"
-        render={(props) => <QueenProfile {...props} sheetsData={db["Statscast"]} />}
+        render={(props) => <QueenProfile {...props} sheetsData={db.ukStatscast} />}
       />
       <Footer />
     </>

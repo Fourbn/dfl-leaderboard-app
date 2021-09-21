@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import sluggify from "../helpers/sluggify";
 
-const queensPhotoDirectory = require.context("../assets/promo-photos", false, /.png$/);
+const queensPhotoDirectory = require.context("../assets/promo-photos", false, /.jpg$/);
 
 const Statscast = ({ sheetsData }) => {
   const listOfPhotos = queensPhotoDirectory.keys();
   const allQueensStats = [...sheetsData];
 
   const sortedQueens = allQueensStats.sort((a, b) => {
-    const queenA = a.Queen.toLowerCase();
-    const queenB = b.Queen.toLowerCase();
+    const queenA = a.queen.toLowerCase();
+    const queenB = b.queen.toLowerCase();
 
     if (queenA < queenB) {
       return -1;
@@ -21,6 +21,8 @@ const Statscast = ({ sheetsData }) => {
     return 0;
   });
 
+  console.log(sortedQueens[0])
+
   return (
     <section className="statscast wrapper">
       <h2>Statscast</h2>
@@ -29,18 +31,18 @@ const Statscast = ({ sheetsData }) => {
         <span>Click the Queen to see their individual stats.</span>
       </p>
       <ul className="queensIndex">
-        {sortedQueens.map((queen, index) => (
-          <li key={sluggify(queen.Queen) + index}>
-            <Link to={`/statscast/${sluggify(queen.Queen)}`}>
-              {listOfPhotos.includes(`./${sluggify(queen.Queen)}.png`) && (
+        {sortedQueens.map((queenObject, index) => (
+          <li key={sluggify(queenObject.queen) + index}>
+            <Link to={`/statscast/${sluggify(queenObject.queen)}`}>
+              {listOfPhotos.includes(`./${sluggify(queenObject.queen)}.jpg`) && (
                 <div className="photoWrapper">
                   <img
-                    src={queensPhotoDirectory(`./${sluggify(queen.Queen)}.png`).default}
+                    src={queensPhotoDirectory(`./${sluggify(queenObject.queen)}.jpg`).default}
                     alt=""
                   />
                 </div>
               )}
-              {queen.Queen}
+              {queenObject.queen}
             </Link>
           </li>
         ))}
