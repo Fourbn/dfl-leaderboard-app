@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import sluggify from "../helpers/sluggify";
 
 const Queens = ({ sheetsData }) => {
@@ -18,7 +18,6 @@ const Queens = ({ sheetsData }) => {
     return 0;
   });
 
-
   return (
     <section className="queens wrapper">
       <h2>Queen Standings</h2>
@@ -30,12 +29,14 @@ const Queens = ({ sheetsData }) => {
           </tr>
         </thead>
         <tbody>
-          {sortedQueens.map((queen, index) => (
+          {sortedQueens.map((queenObject, index) => (
             <tr key={index}>
               <td>
-                <Link to={`/statscast/${sluggify(queen.queen)}`}>{queen.queen}</Link>
+                <Link to={`/statscast/${sluggify(queenObject.queen)}`}>
+                  {queenObject.queen}
+                </Link>
               </td>
-              <td>{queen.totalPoints}</td>
+              <td>{queenObject.totalPoints}</td>
             </tr>
           ))}
         </tbody>

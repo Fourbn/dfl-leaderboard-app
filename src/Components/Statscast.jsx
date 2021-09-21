@@ -2,7 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import sluggify from "../helpers/sluggify";
 
-const queensPhotoDirectory = require.context("../assets/promo-photos", false, /.jpg$/);
+const queensPhotoDirectory = require.context(
+  "../assets/promo-photos",
+  false,
+  /.jpg$/
+);
 
 const Statscast = ({ sheetsData }) => {
   const listOfPhotos = queensPhotoDirectory.keys();
@@ -21,8 +25,6 @@ const Statscast = ({ sheetsData }) => {
     return 0;
   });
 
-  console.log(sortedQueens[0])
-
   return (
     <section className="statscast wrapper">
       <h2>Statscast</h2>
@@ -34,10 +36,16 @@ const Statscast = ({ sheetsData }) => {
         {sortedQueens.map((queenObject, index) => (
           <li key={sluggify(queenObject.queen) + index}>
             <Link to={`/statscast/${sluggify(queenObject.queen)}`}>
-              {listOfPhotos.includes(`./${sluggify(queenObject.queen)}.jpg`) && (
+              {listOfPhotos.includes(
+                `./${sluggify(queenObject.queen)}.jpg`
+              ) && (
                 <div className="photoWrapper">
                   <img
-                    src={queensPhotoDirectory(`./${sluggify(queenObject.queen)}.jpg`).default}
+                    src={
+                      queensPhotoDirectory(
+                        `./${sluggify(queenObject.queen)}.jpg`
+                      ).default
+                    }
                     alt=""
                   />
                 </div>

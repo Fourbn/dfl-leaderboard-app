@@ -2,7 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { withGoogleSheets } from "react-db-google-sheets";
 
-
 import Header from "./Header";
 import Footer from "./Footer";
 import Leaderboard from "./Leaderboard";
@@ -15,8 +14,6 @@ import QueenProfile from "./QueenProfile";
 
 const FetchData = (props) => {
   const { db } = props;
-  console.log(db);
-
 
   return (
     <>
@@ -37,7 +34,9 @@ const FetchData = (props) => {
       />
       <Route
         path="/statscast/:queen"
-        render={(props) => <QueenProfile {...props} sheetsData={db.ukStatscast} />}
+        render={(props) => (
+          <QueenProfile {...props} sheetsData={db.ukStatscast} />
+        )}
       />
       <Footer />
     </>

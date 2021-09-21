@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import sluggify from '../helpers/sluggify';
+import sluggify from "../helpers/sluggify";
 
 const queensPhotoDirectory = require.context(
   "../assets/promo-photos",
@@ -14,14 +14,16 @@ const QueenProfile = ({ sheetsData, match }) => {
   const listOfPhotos = queensPhotoDirectory.keys();
 
   useEffect(() => {
-    const foundMatch = sheetsData.find((queenObject) => sluggify(queenObject.queen) === match.params.queen)
+    const foundMatch = sheetsData.find(
+      (queenObject) => sluggify(queenObject.queen) === match.params.queen
+    );
     // reset the correctPath state in case a user uses the browser back button to go to an invalid queen page
     setCorrectPath(false);
     if (foundMatch) {
       setCorrectPath(true);
-      setMatchingQueenData(foundMatch)
+      setMatchingQueenData(foundMatch);
     }
-  }, [sheetsData, match.params])
+  }, [sheetsData, match.params]);
 
   return (
     <section className="queenProfile wrapper">
@@ -31,8 +33,7 @@ const QueenProfile = ({ sheetsData, match }) => {
             <div className="photoWrapper">
               <img
                 src={
-                  queensPhotoDirectory(`./${match.params.queen}.jpg`)
-                    .default
+                  queensPhotoDirectory(`./${match.params.queen}.jpg`).default
                 }
                 alt=""
               />
