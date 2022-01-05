@@ -6,8 +6,6 @@ import { FaCrown, FaMedal } from "react-icons/fa";
 const Leaderboard = ({ sheetsData }) => {
   const leaderboard = Array.from(sheetsData);
 
-  console.log(leaderboard);
-
   const tableHeadings = ["rank", "racer", "points", "queens"];
 
   const addSuffix = (number) => {
