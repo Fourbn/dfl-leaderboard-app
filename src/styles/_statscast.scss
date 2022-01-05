@@ -26,9 +26,10 @@
     }
   }
   .queensIndex {
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 400px;
+    grid-auto-rows: minmax(400px, 1fr);
     grid-gap: 1rem;
     li {
       text-align: center;
@@ -39,6 +40,9 @@
         color: shade($pink, 5%);
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         &:hover {
           text-decoration: solid underline shade($pink, 5%);
         }
@@ -55,6 +59,12 @@
         width: 100%;
         height: 100%;
       }
+    }
+    .text {
+      height: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   } 
 }

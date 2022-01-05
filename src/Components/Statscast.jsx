@@ -49,8 +49,10 @@ const Statscast = ({ sheetsData }) => {
                     alt=""
                   />
                 </div>
-              )}
-              {queenObject.queen}
+                )}
+              <div className="text">
+                {queenObject.queen}
+              </div>
             </Link>
           </li>
         ))}
