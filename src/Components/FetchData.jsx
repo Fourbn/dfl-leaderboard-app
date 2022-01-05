@@ -21,21 +21,21 @@ const FetchData = (props) => {
       <Route
         exact
         path="/"
-        render={() => <Leaderboard sheetsData={db.ukLeaderboard} />}
+        render={() => <Leaderboard sheetsData={db.S14Leaderboard} />}
       />
       <Route
         path="/queens"
-        render={() => <Queens sheetsData={db.ukQueenStandings} />}
+        render={() => <Queens sheetsData={db.S14QueenStandings} />}
       />
       <Route
         exact
         path="/statscast"
-        render={() => <Statscast sheetsData={db.ukStatscast} />}
+        render={() => <Statscast sheetsData={db.S14Statscast} />}
       />
       <Route
         path="/statscast/:queen"
         render={(props) => (
-          <QueenProfile {...props} sheetsData={db.ukStatscast} />
+          <QueenProfile {...props} sheetsData={db.S14Statscast} />
         )}
       />
       <Footer />
